@@ -1,0 +1,37 @@
+git init
+echo "first messge" > exp8.txt
+git add .
+git branch -M main
+git commit -m "1st msg commited"
+
+git checkout -b sub-branch
+echo "first msg in sub branch" > exp8_1.txt
+git add .
+git commit -m "first commit in sub branch"
+
+git log --oneline
+
+git checkout main
+git cherry-pick 61327a6
+git log --oneline
+
+git checkout sub-branch
+echo "2nd msg in sub branch"
+echo "2nd msg in sub branch" > exp8_2.txt
+git add .
+git commit -m "2nd commit in sub branch"
+
+echo "3rd msg in sub branch" >> exp8_2.txt
+git add .
+git commit -m "3rd commit in sub branch"
+
+echo "4rd msg in sub branch" >> exp8_2.txt
+git add .
+git commit -m "4rd commit in sub branch"
+
+git log --oneline
+
+git checkout main
+git cherry-pick 53f8dad^..c89b27e
+
+git log --oneline
