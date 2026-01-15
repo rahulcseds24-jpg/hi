@@ -1,0 +1,17 @@
+echo "1st msg" > exp9.txt
+git add .
+git commit -m "1st msg commited commited"
+
+echo "1st msg" >> exp9.txt
+git add .
+git commit -m "1st msg commited commited"
+
+git log --oneline
+
+git log -1 0012fb0
+
+git show 0012fb0
+
+git show --no-patch 0012fb0
+
+git log -1 --pretty=format:"%h - %an, %ar - %s" 0012fb0
