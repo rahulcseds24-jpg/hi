@@ -1,0 +1,27 @@
+git config --global user.name "JohnDoe"
+git config --global user.email "JohnDoe@gmail.com"
+git config --global --list
+
+echo "1st msg" > exp10.txt
+git add .
+GIT_AUTHOR_DATE="2023-02-02T10:00:00" \
+GIT_COMMITTER_DATE="2023-02-02T10:00:00" \
+git commit -m "first msg commited"
+
+echo "2nd msg" >> exp10.txt
+git add .
+GIT_AUTHOR_DATE="2023-07-25T14:30:00" \
+GIT_COMMITTER_DATE="2023-07-25T14:30:00" \
+git commit -m "2nd msg commited"
+
+echo "3rd msg" >> exp10.txt
+git add .
+GIT_AUTHOR_DATE="2023-11-19T16:45:00" \
+GIT_COMMITTER_DATE="2023-11-19T16:45:00" \
+git commit -m "3rd msg commited"
+
+git log
+
+git log --format="%an" | sort | uniq
+
+git log --format="%an" | sort
